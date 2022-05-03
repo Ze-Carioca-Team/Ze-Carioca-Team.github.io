@@ -411,8 +411,8 @@ LICENSE file in the root directory of this source tree.
   <script src="bundle.js"></script>
   
   <div id="requirements" class="content input-group" style="width:50%;margin-left:50px;padding-top:50px;padding-bottom:0px;padding-left:1%;border-radius:0px;box-shadow:0px 0px 0px 0 rgb(0 0 0)">
-    <!--<p><span class="span-1">Estabelecer Conexão com Servidor: </span>
-    <input id="insere-localhost" class="form-control" type="text" style="margin-left:36%;height:28px;width:50%;font-size:14px;color:black;margin-top:-22px;font-size:12px;" placeholder="Link Servidor"/></p>-->
+    <p><span class="span-1">Estabelecer Conexão com Servidor: </span>
+    <input id="insere-localhost" class="form-control" type="text" style="margin-left:36%;height:28px;width:50%;font-size:14px;color:black;margin-top:-22px;font-size:12px;" placeholder="Link Servidor"/></p>
     <p><span class="span-2" style="margin-top:12px">Nome de Usuário: </span>
     <input id="username" class="form-control" type="text" style="margin-left:19%;height:28px;width:67%;font-size:14px;color:black;margin-top:-22px;font-size:12px;" placeholder="Nome de Usuário"/></p>
     <p><span class="span-3" style="margin-top:12px">Código da Tarefa: </span>
@@ -480,15 +480,14 @@ LICENSE file in the root directory of this source tree.
   <script src="assets/scripts/main.js"></script>
 
   <script type="text/javascript">
-      server = "";
-
       function start_dialog (){
-          document.getElementById('frame-dialog').src = server+"?worker_id="+document.getElementById("username").value+"&assignment_id="+document.getElementById("task-code").value;
+          document.getElementById('frame-dialog').src = document.getElementById("insere-localhost").value+"?worker_id="+document.getElementById("username").value+"&assignment_id="+document.getElementById("task-code").value;
           $('#js-required').addClass("collapse");
           $('#app').addClass("collapse");
           $('#requirements').html("")
           $('#requirements').addClass("collapse");
           $('#frame-dialog').removeClass("collapse");
+          document.getElementById('frame-dialog').contentWindow.location.reload();
       }
 
       function reloadIFrame() {

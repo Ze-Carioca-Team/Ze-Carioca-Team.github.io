@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="82.897263mm"
-   height="93.786713mm"
-   viewBox="0 0 82.897262 93.786713"
+   width="159.03185mm"
+   height="29.434429mm"
+   viewBox="0 0 159.03184 29.43443"
    version="1.1"
    id="svg8826"
    sodipodi:docname="logo.svg"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   inkscape:export-filename="\\wsl.localhost\Ubuntu\home\jader\Ze-Carioca-Team.github.io\images\logo\logo.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +28,8 @@
      showgrid="false"
      inkscape:snap-page="true"
      inkscape:zoom="1.6118093"
-     inkscape:cx="208.77159"
-     inkscape:cy="136.18236"
+     inkscape:cx="280.11999"
+     inkscape:cy="57.388923"
      inkscape:window-width="1920"
      inkscape:window-height="1046"
      inkscape:window-x="-11"
@@ -39,47 +42,7 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(8.1942253,1.3132248)">
-    <circle
-       style="opacity:1;fill:#187498;fill-opacity:1;stroke:none;stroke-width:0.264583;stroke-opacity:1"
-       id="path43604"
-       cx="33.254406"
-       cy="40.135406"
-       r="41.448631" />
-    <path
-       style="fill:#f9d923;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 69.018452,20.57721 56.002742,58.38474 27.987992,72.88796 Z"
-       id="path20422" />
-    <path
-       style="fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 24.889012,78.09423 15.74281,0.12396 -12.64383,-5.33023 z"
-       id="path14590" />
-    <path
-       style="fill:#367f35;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 18.691062,71.40045 6.19795,6.69378 44.12944,-57.51702 z"
-       id="path13614" />
-    <path
-       style="fill:#f9d923;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 28.035632,22.79062 5.05354,-5.52144 -5.10033,-9.9199 z"
-       id="path9412" />
-    <path
-       style="fill:#36e337;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 43.234962,0 50.424592,20.32929 -0.15072773,92.47349 69.018452,20.57721 Z"
-       id="path9999" />
-    <path
-       style="fill:#36be31;fill-opacity:1;stroke:none;stroke-width:0.277687px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.234962,0 -14.48095,0.17249 -0.76517,7.17679 9.04816,19.54984 L 2.3284523,89.37451 57.490252,20.82513 Z"
-       id="path10100" />
-    <path
-       id="path8864"
-       style="opacity:1;fill:#800000;stroke-width:0.318258"
-       d="m 28.754012,0.17249 a 12.607745,13.155906 0 0 0 -8.66689,12.48997 12.607745,13.155906 0 0 0 8.88383,12.56862 z" />
-    <circle
-       style="opacity:1;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.277687;stroke-opacity:1"
-       id="path23174"
-       cx="35.115635"
-       cy="5.2682595"
-       r="2.6651213" />
+     transform="translate(-27.759566,-20.141204)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -91,5 +54,20 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Rockwell;-inkscape-font-specification:Rockwell;stroke-width:0.264583"
          x="77.448364"
          y="45.611679" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.2777px;line-height:1.25;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display Bold';stroke-width:0.264583"
+       x="26.277903"
+       y="49.081745"
+       id="text44967"><tspan
+         sodipodi:role="line"
+         id="tspan44965"
+         style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display Ultra-Bold';stroke-width:0.264583"
+         x="26.277903"
+         y="49.081745"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display Ultra-Bold';fill:#2f2f41;fill-opacity:1"
+           id="tspan63859">Zé</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:800;font-stretch:normal;font-family:'Playfair Display';-inkscape-font-specification:'Playfair Display Ultra-Bold';fill:#36ae7c;fill-opacity:1"
+           id="tspan71013">Carioca</tspan></tspan></text>
   </g>
 </svg>

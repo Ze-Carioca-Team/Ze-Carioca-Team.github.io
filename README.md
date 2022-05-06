@@ -1,4 +1,5 @@
 # Ze Carioca landing page
 
-![Alt text](./images/logo/logo.svg)
-<img src="./images/logo/logo.svg">
+<img src="./images/logo/logo.svg" height="200px">
+
+ZéCarioca é um framework para criação de chatbots humazinados em português.

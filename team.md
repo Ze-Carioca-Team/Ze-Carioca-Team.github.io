@@ -7,6 +7,6 @@ intro_image_absolute: true
 intro_image_hide_on_mobile: false
 ---
 
-# Meet The Team
+# Conheça o time
 
-Our team of qualified accountants and financial consultants can help your business at any stage of it's growth.
+O time do ZéCarioca é formado por professores a alunos da Unicamp. 

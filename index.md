@@ -1,13 +1,14 @@
 ---
-title: Jekyll Serif Theme
+title: Zé Carioca
 layout: home
-description: Jekyll Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
-intro_image: "images/illustrations/pointing.svg"
+description: Um framework para criação de chatbots. 
+intro_image: "images/illustrations/bot.svg"
 intro_image_absolute: true
 intro_image_hide_on_mobile: true
-show_call_box: true
+show_call_box: false
 ---
 
-# Serif - A Jekyll Business Theme.
+# ZéCarioca - Um framework para criação de chatbots.
 
-Serif contains content types for a typical business website. The theme is fully responsive, blazing fast and artfully illustrated.
+
+Esse framework contém as ferramentas necessárias para desenvolver e aplicar um chatbot baseado em tecnologias estado-da-arte.

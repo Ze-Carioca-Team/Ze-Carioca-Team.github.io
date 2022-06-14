@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Chatbot - Pizzzabot</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/main_.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<script src="assets/js/jquery.min.js"></script>
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/chatbot.png">
+
+	<style type="text/css">
+		.boxhour{
+			margin-top:10px;
+			text-align:right;
+			width:100%;
+            font: 10px Consolas;
+		}
+
+        .botbox {
+			width:75%;
+			margin-top:5px;
+			background-color: #1F7A8C;
+            border: 2px solid #1F7A8C;
+            border-radius: 5px;
+			color:white;
+            display: inline-block;
+            font: 15px Consolas;
+            padding: 10px;
+            position: relative;
+			-webkit-hyphens: auto;
+			-ms-hyphens: auto;
+			hyphens: auto;
+        }
+
+        .botbox.active:after,
+        .botbox.active:before {
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #1F7A8C;
+            bottom: -7px;
+            content: '';
+            left: 8%;
+            margin-left: -7px;
+            position: absolute;
+        }
+
+        .botbox.active:before {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid;
+            border-top-color: inherit;
+            bottom: -10px;
+            margin-left: -10px;
+        }
+
+        .userbox {
+			margin-left:25%;
+			width:75%;
+			margin-top:5px;
+			background-color: #022B3A;
+            border: 2px solid #022B3A;
+            border-radius: 5px;
+			color:white;
+            display: inline-block;
+            font: 15px Consolas;
+            padding: 10px;
+            position: relative;
+			-webkit-hyphens: auto;
+			-ms-hyphens: auto;
+			hyphens: auto;
+        }
+
+        .userbox.active:after,
+        .userbox.active:before {
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid #022B3A;
+            bottom: -7px;
+            content: '';
+            left: 92%;
+            margin-left: -7px;
+            position: absolute;
+        }
+
+        .userbox.active:before {
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid;
+            border-top-color: inherit;
+            bottom: -10px;
+            margin-left: -10px;
+        }
+	</style>
+</head>
+
+<body style="overflow:auto;background-image:url('assets/img/techbackground.jpg');">
+	<div id="wrapper">
+		<div class="vertical-align-wrap">
+			<div class="vertical-align-middle" style="margin:0px;">
+				<button id="dialogbuttom" style="position:fixed;bottom:2%;right:1%;border:0px;background-color:transparent;" onclick="uncollapse()"><img style="height:100px;" src="assets/img/button.png" alt="Klorofil Logo" class="img-responsive logo"></button>
+				<div class="content" id="dialogpanel" style="bottom:1%;right:1%;width:400px;height:550px;overflow:auto;position:fixed;padding:5px;">
+					<div class="auth-box" onclick="collapsed()" style="width:100%;height:100%;border-bottom-right-radius:0px;border-bottom-left-radius:0px;height:10%;overflow:auto;position:relative;background-color:#1F7A8C;color:white;">
+						<img style="height:75%;margin:1%;" src="assets/img/atendente.png">
+						&nbsp&nbsp&nbspATENDENTE&nbsp:&nbsp <b><span class="botname">Bot</span></b>
+						<button type="button" id="closepanel" class="close" onclick="collapsed()" style="color:white;margin-right:2%;margin-top:1%;">
+							<span style="color:white;">&times;</span>
+						</button>
+					</div>
+					<div class="auth-box" style="width:100%;height:100%;border-top-right-radius:0px;border-top-left-radius:0px;height:90%;overflow:auto;position:relative;">
+						<div class="content" style="height:100%;position:relative;">
+							<div class="content" lang="pt" id="painel-user-bot" style="width:97%;height:88%;border-radius:10px;background-color:#E1E5F2;margin:1%;overflow-y:auto;overflow-x:hidden;color:white;font-family:'Consolas';padding:1%;padding-bottom:6%;padding-top:0%;margin-top:2%;padding-left:5px;padding-right:5px;">
+								<span class="botbox active" style="overflow-wrap: break-word !important;"><div dir="auto"><span class="spanmessage"><b><span class="botname">Bot</span>: </b>Olá, seja bem-vindo(a) ao atendimento Pizzzabot, meu nome é <span class="botname">Bot</span>, como posso ajudar?</span><div class="boxhour"><span class="spanhour" id="hour0"></span></div></div></span>
+								<div class='collapse' id='atddigitando' style="padding-left:5px;position:absolute;bottom:11%;left:2%;color:#1F7A8C;">O atendente está digitando...</div>
+							</div>
+							<div id="user-panel" style="width:98%;">
+								<div class="input-group" style="width:100%;padding-top:5px;padding-bottom:0px;padding-left:1%;border-radius:0px;box-shadow:0px 0px 0px 0 rgb(0 0 0)">
+									<input id="msg-user" class="form-control" type="text" style="margin-left:0px;height:25px;width:83%;font-size:14px;color:black;margin-top:1px;font-size:12px;" placeholder="Mensagem"/>
+									<button class="btn" onclick="get_state()" style="width:14%;margin-left:3%;margin-bottom:0px;padding:0px;height:25px;margin-top:0px;text-align:center;font-size:12px;">Enviar</span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+	<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/main.js"></script>
+
+	<script type="text/javascript">
+		userbox = '<div class="l60d2q6s d1544ag0 sj5x9vvc tw6a2znq l9j0dhe7 ni8dbmo4 stjgntxs kdgqqoy6 inkptoze e72ty7fz qmr60zad jm1wdb64 qv66sw1b ljqsnud1 g6srhlxm odn2s2vf chatbox userbox" style="margin-left:25%;width:75%;margin-top:5px;"><div dir="auto" class="ljqsnud1"><span class="spanmessage">';
+		botbox = '<div class="l60d2q6s d1544ag0 sj5x9vvc tw6a2znq l9j0dhe7 ni8dbmo4 stjgntxs qlfml3jp inkptoze jk6sbkaj qmr60zad jm1wdb64 qv66sw1b ljqsnud1 g6srhlxm odn2s2vf chatbox botbox" style="width:75%;margin-top:5px;"><div dir="auto" class="oo9gr5id"><span class="spanmessage">';
+		boxhour_begin = '<br></span><div class="boxhour"><span class="spanhour">';
+		boxhour_end = '</span></div></div></div>';
+		server = "https://witty-roses-wave-34-132-253-143.loca.lt/";
+		namebot = "";
+		genderbot = "";
+		context = "";
+
+		function modifyPage (){
+			var elements = document.getElementsByClassName("chatbox");
+			userpainel = document.getElementById("painel-user-bot");
+			totalwidth = parseInt(parseFloat(userpainel.getBoundingClientRect().width)*0.97);
+			if (userpainel.scrollHeight > userpainel.clientHeight){
+				totalwidth = parseInt(parseFloat(userpainel.getBoundingClientRect().width)*0.97)-15;
+			}
+
+			for (i=0; i < elements.length; i++){
+				elewidth = parseInt(elements[i].getBoundingClientRect().width);
+				spanwidth = parseInt(elements[i].getElementsByClassName("spanmessage")[0].getBoundingClientRect().width)+26;
+				hourwidth = parseInt(elements[i].getElementsByClassName("spanhour")[0].getBoundingClientRect().width)+26;
+				typeuser = parseInt(elements[i].getElementsByClassName("ljqsnud1").length);
+				if (spanwidth > hourwidth){
+					if (spanwidth <= elewidth){
+						elements[i].style.width = spanwidth+"px";
+						if (typeuser > 0){
+							margin = totalwidth - spanwidth;
+							elements[i].style.marginLeft = margin+"px";
+						}
+					}
+				} else {
+					if (hourwidth <= elewidth){
+						elements[i].style.width = hourwidth+"px";
+						if (typeuser > 0){
+							margin = totalwidth - hourwidth;
+							elements[i].style.marginLeft = margin+"px";
+						}
+					}
+				}
+			}
+		}
+
+		function uncollapse (){
+			$('#dialogpanel').removeClass("collapse");
+			$('#dialogbuttom').addClass("collapse");
+		}
+
+		function collapsed (){
+			$('#dialogbuttom').removeClass("collapse");
+			$('#dialogpanel').addClass("collapse");
+		}
+
+		function updateScroll (){
+			var element = document.getElementById("painel-user-bot");
+			element.scrollTop = element.scrollHeight;
+		}
+
+		function setDigitando (){
+			text = $('#atddigitando').html();
+			if ((text.split(".").length-1) < 3){
+				$('#atddigitando').html(text+".");
+			} else {
+				$('#atddigitando').html("O atendente está digitando.");
+			}
+		}
+
+		function setNumber (number){
+			if (number < 10){ return '0'+number;
+			} else { return ''+number; }
+		}
+
+		function send (){
+			message = document.getElementById("msg-user").value;
+			document.getElementById("msg-user").value = "";
+
+			date = new Date();
+			strdate = date.getUTCFullYear()+"/"+setNumber(date.getMonth()+1)+"/"+setNumber(date.getDate())+" ";
+			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+			beginbot = "<b>"+namebot+": </b>";
+
+			user_message = "<b>Você: </b>"+message+"";
+			text = $('#painel-user-bot').html() + userbox + user_message;
+			text += boxhour_begin+strdate+boxhour_end;
+			$('#painel-user-bot').html(""+text);
+			modifyPage();
+			updateScroll();
+
+			$('#atddigitando').removeClass("collapse");
+			$.ajax({
+				type: "POST",
+				url: server,
+				data: {request: 1, context: context, sentence: message},
+				success: function (response){
+					response = JSON.parse(response);
+					date = new Date();
+					strdate = date.getUTCFullYear()+"/"+setNumber(date.getMonth()+1)+"/"+setNumber(date.getDate())+" ";
+					strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+
+					if (response["success"] == "true"){
+						text = $('#painel-user-bot').html();
+						text += botbox+beginbot+response["response"];
+						text += boxhour_begin+strdate+boxhour_end;
+						$('#painel-user-bot').html(""+text);
+						context = response["context"];
+						modifyPage();
+						updateScroll();
+					} else {
+						user_message = botbox+beginbot+"Estamos passando por uma instabilidade no momento.";
+						user_message += boxhour_begin+strdate+boxhour_end;
+						user_message += botbox+beginbot+"Volte em alguns minutos!";
+						user_message += boxhour_begin+strdate+boxhour_end;
+						text = $('#painel-user-bot').html() + user_message;
+						$('#painel-user-bot').html(""+text);
+						modifyPage();
+						updateScroll();
+					}
+				},
+				complete: function(xhr, textStatus) {
+					if (parseInt(xhr.status) != 200){
+						date = new Date();
+						strdate = date.getUTCFullYear()+"/"+setNumber(date.getMonth()+1)+"/"+setNumber(date.getDate())+" ";
+						strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+
+						user_message = botbox+beginbot+"Estamos passando por uma instabilidade no momento.";
+						user_message += boxhour_begin+strdate+boxhour_end;
+						user_message += botbox+beginbot+"Volte em alguns minutos!";
+						user_message += boxhour_begin+strdate+boxhour_end;
+						text = $('#painel-user-bot').html() + user_message;
+						$('#painel-user-bot').html(""+text);
+						modifyPage();
+						updateScroll();
+					}
+					$('#atddigitando').addClass("collapse");
+				}
+			});
+		}
+
+		function get_attendant (){
+			$.ajax({
+				type: "POST",
+				url: server,
+				data: {request: 0},
+				success: function (response){
+					response = JSON.parse(response);
+					if (response["success"] == "true"){
+						namebot = response["name"];
+						genderbot = parseInt(response["gender"]);
+					} else {
+						namebot = "Bot";
+						genderbot = 0;
+					}
+					$('.botname').html(""+namebot);
+					modifyPage();
+					updateScroll();
+				},
+				complete: function(xhr, textStatus) {
+					if (parseInt(xhr.status) != 200){
+						namebot = "Bot";
+						genderbot = 0;
+						$('.botname').html(""+namebot);
+						modifyPage();
+						updateScroll();
+					}
+				}
+			});
+		}
+
+		//function start_dialog (){
+		//	code = document.getElementById("insere-codigo").value;
+		//	server = code;
+		//	document.getElementById("insere-codigo").value = "";
+
+		//	get_attendant();
+		//	date = new Date();
+		//	strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
+		//	strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+		//	$('#hour0').html(strdate);
+		//	$('#dialogbuttom').click();
+		//	modifyPage();
+		//	$('#closepanel').click();
+		//}
+
+		setInterval('setDigitando()', 750);
+		$(document).keypress(function(e){
+			if(e.which == 13){ send(); }
+		});
+
+		$(document).ready(function() {
+			get_attendant();
+			date = new Date();
+			strdate = setNumber(date.getDate())+"/"+setNumber(date.getMonth()+1)+"/"+date.getUTCFullYear()+" ";
+			strdate += setNumber(date.getHours())+":"+setNumber(date.getMinutes());
+			$('#hour0').html(strdate);
+			$('#dialogbuttom').click();
+			modifyPage();
+			$('#closepanel').click();
+		});
+	</script>
+</body>
+</html>
